@@ -52,11 +52,8 @@ window.writeText = function() {
     const tds = pair.map(e => `<td style="width=50%">${e}</td>`)
     const txt = `<tr>${tds.join('')}</tr>`
     return txt
-    // var content = pair.map((e) => { return `<div class="col" style="font-size: ${fontsize}px;">${e}</div>`; });
-    // return `<div class="box">\n${content.join('')}</div>`
   });
 
   const tbl = `<table class="outputtable" style="font-size: ${fontsize}px; width: 100%;">${lines.join('')}</table>`
-  // document.getElementById('output').innerHTML = lines.join('\n');
   document.getElementById('output').innerHTML = tbl;
 }
