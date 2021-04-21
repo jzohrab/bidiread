@@ -1,0 +1,16 @@
+{
+  "name": "bidirect",
+  "version": "1.0.0",
+  "description": "create a bidirectional reader",
+  "main": "index.html",
+  "scripts": {
+    "start": "NODE_ENV=development parcel src/index.html --out-dir dev",
+    "build": "parcel build src/index.html --out-dir docs --public-url ./",
+    "deploy": "npm run build && git add docs && git commit -m 'Deploy' && git push origin main"
+  },
+  "author": "jzohrab",
+  "license": "n/a",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

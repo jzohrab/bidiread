@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='./sidebar.js'></script>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>Bidirect</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PBBRWJB93Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L5KCD95B5Z');
+    </script>
+
+  </head>
+  <body>
+
+    <div class="sidenav">
+      <div class="toolname">
+        <p>Bidirect</p>
+      </div>
+      <div class="navlinks">
+        <a href="#" onclick="openPopup('menuUsage');">Usage</a>
+        <a href="#" onclick="openPopup('menuFaq');">FAQ/NAQ</a>
+        <a href="#" onclick="openPopup('menuAbout');">About</a>
+      </div>
+    </div>
+
+    <div class="main">
+
+      <div id="bannerDiv">
+        <p>Make a bidirectional reader from text &mdash; see <a href="#" onclick="openPopup('menuUsage');">Usage</a> if you're new.  Welcome and good luck!</p>
+      </div>
+
+      <div>
+        <h1>CONTENT HERE</h1>
+      </div>
+          
+      <!-- Popup content -->
+      <div id="menuUsage" class="popupContent">
+        <p class="title">Usage</p>
+        <ol>
+          <li>todo.</li>
+        </ol>
+      </div>
+
+      <div id="menuFaq" class="popupContent">
+        <p class="title">FAQs and NAQs (Never Asked Questions).</p>
+        <p>
+          <b>"Who is this for?"</b><br />
+          A: Whoever finds it useful, really.
+        </p>
+        <p>
+          <b>"Why is this so primitive?"</b><br />
+          A: This is alpha-level release software -- there's nothing to it really.  There are many things that could be done -- hooking in to existing translation utils, exporting fun things etc -- but that's way out of scope!
+        </p>
+        <p>
+          <b>"Can you make this software do x, y, z, [feature request here]?"</b><br />
+          A: I welcome code contributions to the GitHub repo! (see "About" in the menu)  I don't know how many people will use it, though!
+        </p>
+        <p>
+          <b>"I love it!  Where can I donate a pile of money to?"</b><br />
+          A: This is a small project, done for fun and as a small contribution to any learners who find it interesting.  But if you <i>really</i> want to give me money, please donate that same sum to your nearest women's health org, animal shelter, or any worthy cause.  Or call that friend you've been meaning to and say hi.  Or surprise a stranger with a free coffee.  Then send me a virtual high-five, and we'll call it even.  Cheers!
+        </p>
+      </div>
+      
+      <div id="menuAbout" class="popupContent">
+        <p class="title">About</p>
+        <p>Bidirect is for making bidirectional readers. :-P</p>
+        <p>Version: 0.0.0.0.1</p>
+        <p>GitHub repo: <a href="https://github.com/jzohrab/bidirect">bidirect</a> - code contributions are <b>very</b> welcome!</p>
+        <p>Issues and complaints: please use GitHub issues.</p>
+      </div>
+      
+    </div>
+    
+    <div id="popupDiv" style="display: none;">
+      <div id="popupBox">
+        <div class="popupCloseButton" onclick="closePopup();">&times;</div>
+        <div id="popupText" />
+      </div>
+    </div>
+
+
+  </body>
+</html>
+
