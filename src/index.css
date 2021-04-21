@@ -1,6 +1,10 @@
 body {
-    font-family: Arial
+    font-family: Helvetica;
 }
+
+
+.box { display: flex; }
+.col { width: 400px; padding: 10px; }
 
 
 /* The sidebar menu */
@@ -52,10 +56,14 @@ body {
 }
 
 #bannerDiv {
-    margin-bottom: 40px;
-    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     font-size: 12px;
     font-style: italic;
+}
+
+p.colhead {
+    margin: 2px;
 }
 
 /** Popup - based on https://html-online.com/articles/simple-popup-box/ */

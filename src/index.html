@@ -3,6 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='./index.js'></script>
     <script src='./sidebar.js'></script>
     <link rel="stylesheet" type="text/css" href="./index.css">
     <title>Bidirect</title>
@@ -36,10 +37,22 @@
         <p>Make a bidirectional reader from text &mdash; see <a href="#" onclick="openPopup('menuUsage');">Usage</a> if you're new.  Welcome and good luck!</p>
       </div>
 
-      <div>
-        <h1>CONTENT HERE</h1>
+      <div class="box">
+        <div class="col">
+          <p class="colhead">Left text:</p>
+          <textarea id="L1" rows="4" cols="45"></textarea>
+        </div>
+        <div class="col">
+          <p class="colhead">Right text:</p>
+          <textarea id="L2" rows="4" cols="45"></textarea>
+        </div>
       </div>
-          
+      <button type="button" onclick="writeText();">join</button>
+      <hr />
+      <div id="output">
+        <i>Output will be written here.</i>
+      </div>
+
       <!-- Popup content -->
       <div id="menuUsage" class="popupContent">
         <p class="title">Usage</p>
