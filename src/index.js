@@ -60,38 +60,3 @@ window.writeText = function() {
   // document.getElementById('output').innerHTML = lines.join('\n');
   document.getElementById('output').innerHTML = tbl;
 }
-
-
-window.getPdf = function() {
-  var pdf = new jsPDF('p', 'pt', 'letter');
-
-  const specialElementHandlers = {
-    '.outputtable': function (element, renderer) {
-      return true
-    }
-  };
-
-  const source = document.getElementById('output');
-
-  const margins = {
-    top: 80,
-    bottom: 60,
-    left: 40,
-    width: 522
-  };
-
-  pdf.fromHTML(
-    source,
-    margins.left,
-    margins.top,
-    {
-      'width': margins.width, // max width of content on PDF
-      'elementHandlers': specialElementHandlers
-    },
-    function (dispose) {
-      pdf.save('bidiread.pdf');
-    },
-    margins
-  );
-  
-};
