@@ -48,7 +48,8 @@
         </div>
       </div>
       <div id="userbuttons">
-        <button type="button" onclick="writeText();">join</button>
+        <button type="button" onclick="writeText();">Join</button>
+        using
         <select name="selfontsize" id="fontsize">
           <option value="10">10</option>
           <option value="12" selected="selected">12</option>
@@ -57,7 +58,7 @@
           <option value="18">18</option>
           <option value="24">24</option>
           <option value="30">30</option>
-        </select> pt.
+        </select> pt. font.
         &nbsp;&nbsp;
         <span id="userwarning"></span>
       </div>
@@ -74,7 +75,8 @@
           <li>Get the text you're studying in raw text form (for copy/pasting).</li>
           <li>Get a translation for the text (this is usually the tough part).  Use Google translate or Deepl (https://www.deepl.com/translator) to translate your text.  Often, free services have length restrictions for the texts, so you might need to break the doc up into smaller sections.</li>
           <li>Copy the initial text into and paste it in either the Left or Right text, and copy the translation and paste it in the other.</li>
-          <li>Click 'join'.  You'll receive a warning if the paragraph break counts don't match, but the texts will still be joined.</li>
+          <li>Select a font size, and click 'join'.  You'll receive a warning if the paragraph break counts don't match, but the texts will still be joined.</li>
+          <li>Printing the page (File > Print) <i>should</i> print just the text.</li>
         </ol>
       </div>
 
@@ -86,12 +88,15 @@
         </p>
         <p>
           <b>"Why is this so primitive?"</b><br />
-          A: This is alpha-level release software -- there's nothing to it really.  There are many things that could be done -- hooking in to existing translation utils, exporting fun things etc -- but that's way out of scope!
+          A: This is alpha-level release software -- there's nothing to it really.  There are many things that could be done -- hooking in to existing translation utils, exporting fun things etc -- but that's <i>way</i> out of scope.
         </p>
         <p>
           <b>"Can you make this software do x, y, z, [feature request here]?"</b><br />
           A: I welcome code contributions to the GitHub repo! (see "About" in the menu)  I don't know how many people will use it, though!
         </p>
+        <p>
+          <b>"This looks terrible printed."</b><br />
+          A: Yeah ... it works in Chrome on a Mac.  The css to get it to print correctly was rather tricky for me.  If you can fix the css, that would be grand.
         <p>
           <b>"I love it!  Where can I donate a pile of money to?"</b><br />
           A: This is a small project, done for fun and as a small contribution to any learners who find it interesting.  But if you <i>really</i> want to give me money, please donate that same sum to your nearest women's health org, animal shelter, or any worthy cause.  Or call that friend you've been meaning to and say hi.  Or surprise a stranger with a free coffee.  Then send me a virtual high-five, and we'll call it even.  Cheers!
