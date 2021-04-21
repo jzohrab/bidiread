@@ -11,14 +11,16 @@ window.sayHello = function() {
   const i = Math.floor(Math.random() * samples.length)
 
   let greeting = samples[i]
-
+  let devextra = ''
   if (process.env.NODE_ENV === 'development') {
-    greeting += Array(5).fill(' Lots of text for development.').join('')
+    const paragraph = Array(5).fill('Lots of text for development.').join(' ')
+    devextra = '\n' + Array(10).fill(paragraph).map((s, i) => `P${i}. ${s}`).join('\n')
   }
 
-  document.getElementById('L1').value = greeting
+  document.getElementById('L1').value = samples[i] + devextra
+  document.getElementById('L2').value = `Welcome!\nHere is some text.` + devextra
 
-  document.getElementById('L2').value = `Welcome!\nHere is some text.`
+  window.writeText()
 }
 
 window.writeText = function() {
@@ -47,7 +49,7 @@ window.writeText = function() {
   const fontsize = document.getElementById('fontsize').value
   var lines = pairs.map(function (pair) {
     const [left, right] = pair
-    const tds = pair.map(e => `<td>${e}</td>`)
+    const tds = pair.map(e => `<td style="width=50%">${e}</td>`)
     const txt = `<tr>${tds.join('')}</tr>`
     return txt
     // var content = pair.map((e) => { return `<div class="col" style="font-size: ${fontsize}px;">${e}</div>`; });
@@ -62,10 +64,34 @@ window.writeText = function() {
 
 window.getPdf = function() {
   var pdf = new jsPDF('p', 'pt', 'letter');
-  pdf.canvas.height = 72 * 11;
-  pdf.canvas.width = 72 * 8.5;
 
-  pdf.fromHTML(document.getElementById('output'));
+  const specialElementHandlers = {
+    '.outputtable': function (element, renderer) {
+      return true
+    }
+  };
 
-  pdf.save('bidiread.pdf');
+  const source = document.getElementById('output');
+
+  const margins = {
+    top: 80,
+    bottom: 60,
+    left: 40,
+    width: 522
+  };
+
+  pdf.fromHTML(
+    source,
+    margins.left,
+    margins.top,
+    {
+      'width': margins.width, // max width of content on PDF
+      'elementHandlers': specialElementHandlers
+    },
+    function (dispose) {
+      pdf.save('bidiread.pdf');
+    },
+    margins
+  );
+  
 };

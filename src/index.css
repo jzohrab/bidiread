@@ -8,6 +8,25 @@ body {
 
 #userwarning { font-style: italic; color: red; }
 
+
+/* Ref https://stackoverflow.com/questions/20364212/limit-print-area-to-a-div */
+/* Lots of trouble with this, likely a better way to do this. */
+@media print {
+   body *, #main * { display:none; }
+   #main, #main #output, #main #output * { display:block; }
+   #main { margin-left: 20px!important;}
+   #main #output table { display: table; table-layout:fixed; width:100%!important; }
+   #main #output table tr { display: table-row; width:100%!important; }
+   #main #output table tr td { display: table-cell; width:50%!important; }
+}
+
+
+.outputtable {
+    table-layout:fixed;
+    width:80%!important;
+}
+
+
 table, th, td {
   border: 0px;
   padding: 8px;
@@ -58,7 +77,7 @@ table, th, td {
 
 
 /* Style page content */
-.main {
+#main {
     margin-left: 160px; /* Same as the width of the sidebar */
     padding: 0px 10px;
 }
