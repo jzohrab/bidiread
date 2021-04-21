@@ -1,5 +1,5 @@
 {
-  "name": "bidirect",
+  "name": "bidiread",
   "version": "1.0.0",
   "description": "create a bidirectional reader",
   "main": "index.html",

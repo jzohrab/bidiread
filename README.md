@@ -1,4 +1,4 @@
-# Bidirect
+# Bidiread
 
 A dead-simple bidirection reader creator.
 
