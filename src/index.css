@@ -12,6 +12,7 @@ table, th, td {
   border: 0px;
   padding: 8px;
   text-align: left;
+  vertical-align: top;
 }
 
 /* The sidebar menu */

@@ -9,7 +9,15 @@ window.sayHello = function() {
     'Bienvenue!\nVoici un peu de texte.',
   ]
   const i = Math.floor(Math.random() * samples.length)
-  document.getElementById('L1').value = samples[i]
+
+  let greeting = samples[i]
+
+  if (process.env.NODE_ENV === 'development') {
+    greeting += Array(5).fill(' Lots of text for development.').join('')
+  }
+
+  document.getElementById('L1').value = greeting
+
   document.getElementById('L2').value = `Welcome!\nHere is some text.`
 }
 
