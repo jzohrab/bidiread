@@ -8,6 +8,12 @@ body {
 
 #userwarning { font-style: italic; color: red; }
 
+table, th, td {
+  border: 0px;
+  padding: 8px;
+  text-align: left;
+}
+
 /* The sidebar menu */
 /* Thanks, https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp */
 .sidenav {

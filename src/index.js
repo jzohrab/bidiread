@@ -2,6 +2,17 @@
 // https://stackoverflow.com/questions/57602686/
 //   javascript-function-wont-trigger-when-called-in-html-file-during-parcel-build
 
+window.sayHello = function() {
+  const samples = [
+    '¡Bienvenido!\nAquí tienes un texto.',
+    'Willkommen!\nHier ist etwas Text.',
+    'Bienvenue!\nVoici un peu de texte.',
+  ]
+  const i = Math.floor(Math.random() * samples.length)
+  document.getElementById('L1').value = samples[i]
+  document.getElementById('L2').value = `Welcome!\nHere is some text.`
+}
+
 window.writeText = function() {
 
   function getParagraphs(elid) {
@@ -27,11 +38,17 @@ window.writeText = function() {
 
   const fontsize = document.getElementById('fontsize').value
   var lines = pairs.map(function (pair) {
-    var content = pair.map((e) => { return `<div class="col" style="font-size: ${fontsize}px;">${e}</div>`; });
-    return `<div class="box">\n${content.join('')}</div>`
+    const [left, right] = pair
+    const tds = pair.map(e => `<td>${e}</td>`)
+    const txt = `<tr>${tds.join('')}</tr>`
+    return txt
+    // var content = pair.map((e) => { return `<div class="col" style="font-size: ${fontsize}px;">${e}</div>`; });
+    // return `<div class="box">\n${content.join('')}</div>`
   });
 
-  document.getElementById('output').innerHTML = lines.join('\n');
+  const tbl = `<table class="outputtable" style="font-size: ${fontsize}px; width: 100%;">${lines.join('')}</table>`
+  // document.getElementById('output').innerHTML = lines.join('\n');
+  document.getElementById('output').innerHTML = tbl;
 }
 
 
@@ -40,7 +57,7 @@ window.getPdf = function() {
   pdf.canvas.height = 72 * 11;
   pdf.canvas.width = 72 * 8.5;
 
-  pdf.fromHTML(document.getElementById('output').innerHTML);
+  pdf.fromHTML(document.getElementById('output'));
 
   pdf.save('bidiread.pdf');
 };
