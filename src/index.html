@@ -47,7 +47,11 @@
           <textarea id="L2" rows="4" cols="45"></textarea>
         </div>
       </div>
-      <button type="button" onclick="writeText();">join</button>
+      <div id="userbuttons">
+        <button type="button" onclick="writeText();">join</button>
+        &nbsp;&nbsp;
+        <span id="userwarning"></span>
+      </div>
       <hr />
       <div id="output">
         <i>Output will be written here.</i>
@@ -56,8 +60,12 @@
       <!-- Popup content -->
       <div id="menuUsage" class="popupContent">
         <p class="title">Usage</p>
+        <p>Bilingual readers are great (target text on one side, native on another), but sometimes not available.  This simple tool joins two texts together.  Often, it's sufficient to use even low-quality machine translation for bidirectional readers, because you can use both texts together to come up with a more precise translation and understanding.</p>
         <ol>
-          <li>todo.</li>
+          <li>Get the text you're studying in raw text form (for copy/pasting).</li>
+          <li>Get a translation for the text (this is usually the tough part).  Use Google translate or Deepl (https://www.deepl.com/translator) to translate your text.  Often, free services have length restrictions for the texts, so you might need to break the doc up into smaller sections.</li>
+          <li>Copy the initial text into and paste it in either the Left or Right text, and copy the translation and paste it in the other.</li>
+
         </ol>
       </div>
 

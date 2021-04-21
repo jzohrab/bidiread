@@ -6,6 +6,7 @@ body {
 .box { display: flex; }
 .col { width: 400px; padding: 10px; }
 
+#userwarning { font-style: italic; color: red; }
 
 /* The sidebar menu */
 /* Thanks, https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp */

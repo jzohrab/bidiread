@@ -7,18 +7,22 @@ window.writeText = function() {
   function getParagraphs(elid) {
     var t = document.getElementById(elid).value;
     var pars = t.split(/\r?\n/g);
-    return pars;
+    return pars.filter(e => e && e.trim() !== '');
   }
 
   var l1pars = getParagraphs("L1");
   var l2pars = getParagraphs("L2");
 
-  if (l1pars.length !== l2pars.length) {
-    window.alert('mismatched pars')
+  lc = l1pars.length
+  rc = l2pars.length
+  let warning = ''
+  if (lc !== rc) {
+    warning = `Warning: different paragraph counts: left = ${lc}, right = ${rc}`;
   }
+  document.getElementById('userwarning').innerHTML = warning;
 
   var pairs = l1pars.map(function(e, i) {
-    return [e, l2pars[i]];
+    return [e, l2pars[i] || '???' ];
   });
 
   var lines = pairs.map(function (pair) {

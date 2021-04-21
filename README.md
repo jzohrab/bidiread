@@ -2,10 +2,7 @@
 
 A dead-simple bidirection reader creator.
 
-
-Hi all, I like the side-by-side-columns format of bilingual readers, and find it a hassle to switch between a foreign-language doc and its translation when reading, so I wrote a short script that knits together two files to create a single html file with the paragraphs aligned correctly.
-
-e.g., given a file "esp.txt" which has a long spanish text, and "eng.txt" which has its translation using Google docs or DeepL or similar, this generates "out.html" with English on the left and Spanish on the right:
+Given two text box inputs, this html outputs a simple bidirectional reader with the paragraphs aligned correctly.
 
 ![Alt text](/img/sample.png?raw=true "Sample")
 
