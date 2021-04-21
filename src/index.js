@@ -2,6 +2,9 @@
 // https://stackoverflow.com/questions/57602686/
 //   javascript-function-wont-trigger-when-called-in-html-file-during-parcel-build
 
+/**
+ * Fill in greetings.
+ */
 window.sayHello = function() {
   const samples = [
     '¡Bienvenido!\nAquí tienes un texto.',
@@ -10,20 +13,34 @@ window.sayHello = function() {
   ]
   const i = Math.floor(Math.random() * samples.length)
 
-  let greeting = samples[i]
-  let devextra = ''
+  document.getElementById('L1').value = samples[i]
+  document.getElementById('L2').value = `Welcome!\nHere is some text.`
+
   if (process.env.NODE_ENV === 'development') {
-    const paragraph = Array(5).fill('Lots of text for development.').join(' ')
-    devextra = '\n' + Array(10).fill(paragraph).map((s, i) => `P${i}. ${s}`).join('\n')
+    window.devPrep()
   }
-
-  document.getElementById('L1').value = samples[i] + devextra
-  document.getElementById('L2').value = `Welcome!\nHere is some text.` + devextra
-
-  window.writeText()
 }
 
-window.writeText = function() {
+
+/**
+ * Hacks for dev.
+ */
+window.devPrep = function() {
+  const paragraph = Array(5).fill('Lots of text for development to check layouts.').join(' ')
+  const devextra = '\n' + Array(10).fill(paragraph).map((s, i) => `P${i}. ${s}`).join('\n')
+  const ids = ['L1', 'L2']
+  ids.forEach(s => {
+    const el = document.getElementById(s)
+    el.value = el.value + devextra
+  })
+  window.joinTexts()
+}
+
+
+/**
+ * Generate the bidirectional reader.
+ */
+window.joinTexts = function() {
 
   function getParagraphs(elid) {
     var t = document.getElementById(elid).value;
