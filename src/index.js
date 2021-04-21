@@ -33,3 +33,14 @@ window.writeText = function() {
 
   document.getElementById('output').innerHTML = lines.join('\n');
 }
+
+
+window.getPdf = function() {
+  var pdf = new jsPDF('p', 'pt', 'letter');
+  pdf.canvas.height = 72 * 11;
+  pdf.canvas.width = 72 * 8.5;
+
+  pdf.fromHTML(document.getElementById('output').innerHTML);
+
+  pdf.save('bidiread.pdf');
+};
