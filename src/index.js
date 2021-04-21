@@ -25,8 +25,9 @@ window.writeText = function() {
     return [e, l2pars[i] || '???' ];
   });
 
+  const fontsize = document.getElementById('fontsize').value
   var lines = pairs.map(function (pair) {
-    var content = pair.map((e) => { return `<div class="col">${e}</div>`; });
+    var content = pair.map((e) => { return `<div class="col" style="font-size: ${fontsize}px;">${e}</div>`; });
     return `<div class="box">\n${content.join('')}</div>`
   });
 
