@@ -63,10 +63,15 @@ window.joinTexts = function() {
     return [e, l2pars[i] || '???' ];
   });
 
+  const leftfont = document.getElementById('leftfont').value
+  const rightfont = document.getElementById('rightfont').value
   const fontsize = document.getElementById('fontsize').value
   var lines = pairs.map(function (pair) {
     const [left, right] = pair
-    const tds = pair.map(e => `<td style="width=50%">${e}</td>`)
+    const tds = pair.map((e,idx) => {
+        const face = (idx == 0) ? leftfont : rightfont
+        return `<td style="font-family: ${face}; width=50%">${e}</td>`
+    })
     const txt = `<tr>${tds.join('')}</tr>`
     return txt
   });

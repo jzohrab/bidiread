@@ -41,10 +41,24 @@
         <div class="col">
           <p class="colhead">Left text:</p>
           <textarea id="L1" rows="4" cols="45"></textarea>
+          <div id="leftfontdiv">
+              Left output font:
+              <select name="selleftfont" id="leftfont">
+                  <option value="Helvetica" selected="selected">Helvetica</option>
+                  <option value="Georgia">Georgia</option>
+              </select>
+          </div>
         </div>
         <div class="col">
           <p class="colhead">Right text:</p>
           <textarea id="L2" rows="4" cols="45"></textarea>
+          <div id="rightfontdiv">
+              Right output font:
+              <select name="selrightfont" id="rightfont">
+                  <option value="Helvetica" selected="selected">Helvetica</option>
+                  <option value="Georgia">Georgia</option>
+              </select>
+          </div>
         </div>
       </div>
       <div id="userbuttons">
@@ -103,7 +117,7 @@
           A: This is a small project, done for fun and as a small contribution to any learners who find it interesting.  But if you <i>really</i> want to give me money, please donate that same sum to your nearest women's health org, animal shelter, or any worthy cause.  Or call that friend you've been meaning to and say hi.  Or surprise a stranger with a free coffee.  Then send me a virtual high-five, and we'll call it even.  Cheers!
         </p>
       </div>
-      
+
       <div id="menuAbout" class="popupContent">
         <p class="title">About</p>
         <p>Bidiread is for making bidirectional readers. :-P</p>
@@ -111,9 +125,9 @@
         <p>GitHub repo: <a href="https://github.com/jzohrab/bidiread">bidiread</a> - code contributions are <b>very</b> welcome!</p>
         <p>Issues and complaints: please use GitHub issues.</p>
       </div>
-      
+
     </div>
-    
+
     <div id="popupDiv" style="display: none;">
       <div id="popupBox">
         <div class="popupCloseButton" onclick="closePopup();">&times;</div>
@@ -124,4 +138,3 @@
 
   </body>
 </html>
-
