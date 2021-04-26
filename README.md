@@ -34,6 +34,14 @@ npm start
 # Then go to the local address it tells you
 ```
 
+## Tests
+
+We use `tape` for tests.  https://github.com/substack/tape
+
+`npm run test`
+
+Currently, there's a single stub test.  Any extensive js code should have tests.
+
 ## Contributing
 
 Contributions would be super if it makes this more useful/pretty/interesting.

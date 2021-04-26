@@ -4,6 +4,7 @@
   "description": "create a bidirectional reader",
   "main": "index.html",
   "scripts": {
+    "test": "tape 'test/**/*-test.js' | tap-spec",
     "start": "NODE_ENV=development parcel src/index.html --out-dir dev",
     "build": "parcel build src/index.html --out-dir docs --public-url ./",
     "deploy": "npm run build && git add docs && git commit -m 'Deploy' && git push origin main"
@@ -11,6 +12,8 @@
   "author": "jzohrab",
   "license": "n/a",
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.0.0"
   }
 }
