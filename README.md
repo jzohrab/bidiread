@@ -8,6 +8,14 @@ Given two text box inputs, this html outputs a simple bidirectional reader with 
 
 **Demo is running at https://jzohrab.github.io/bidirect/**
 
+## Getting translations
+
+As given in the Usage on the site:
+
+* If you use Chrome, drag the .txt file into Chrome, right-click anywhere, and then click Translate.
+* Use Google translate or Deepl (https://www.deepl.com/translator) to translate your text.  Often, free services have length restrictions for the texts, so you might need to break the doc up into smaller sections.</li>
+
+
 # Development
 
 ## Overview
